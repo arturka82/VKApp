@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PodrobnoCollectionViewCell" id="gTV-IL-0wX" customClass="PodrobnoCollectionViewCell" customModule="VKApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dld-hu-JU5">
+                        <rect key="frame" x="75" y="49" width="150" height="150"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uk-5L-WJ5">
+                        <rect key="frame" x="75" y="222" width="150" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eBG-OJ-rgU" customClass="CustomImage" customModule="VKApp" customModuleProvider="target">
+                        <rect key="frame" x="75" y="49" width="150" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="Umd-0v-Lsm"/>
+                            <constraint firstAttribute="height" constant="150" id="V3V-vv-E1G"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="eBG-OJ-rgU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="75" id="1tK-6r-f6F"/>
+                <constraint firstItem="6Uk-5L-WJ5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="75" id="56b-dd-CkW"/>
+                <constraint firstAttribute="trailing" secondItem="6Uk-5L-WJ5" secondAttribute="trailing" constant="75" id="GIw-NO-bDj"/>
+                <constraint firstItem="eBG-OJ-rgU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="49" id="PP3-yw-SUt"/>
+                <constraint firstItem="6Uk-5L-WJ5" firstAttribute="top" secondItem="eBG-OJ-rgU" secondAttribute="bottom" constant="23" id="SxU-BV-9nb"/>
+                <constraint firstAttribute="trailing" secondItem="eBG-OJ-rgU" secondAttribute="trailing" constant="75" id="Z8L-3N-xPX"/>
+                <constraint firstAttribute="bottom" secondItem="6Uk-5L-WJ5" secondAttribute="bottom" constant="42" id="g8L-do-lIO"/>
+            </constraints>
+            <size key="customSize" width="274" height="252"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                    <real key="value" value="18"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                    <real key="value" value="54"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="backView" destination="Dld-hu-JU5" id="fXW-v1-3WU"/>
+                <outlet property="userDetailImageView" destination="eBG-OJ-rgU" id="lzW-7e-bvA"/>
+                <outlet property="userNameLabel" destination="6Uk-5L-WJ5" id="bgj-Ab-ttc"/>
+            </connections>
+            <point key="canvasLocation" x="278.26086956521743" y="126.5625"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

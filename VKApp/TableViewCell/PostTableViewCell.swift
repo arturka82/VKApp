@@ -34,7 +34,7 @@ class PostTableViewCell: UITableViewCell {
     
     func configure(model: Post) {
         postNameLabel.text = model.postName
-        likeCountLabel.text = model.likeCount
+//        likeCountLabel.text = model.likeCount
         smallImageView.image = UIImage(named:model.smallImageUser)
         mainImageView.image = UIImage(named: model.nameImageView)
     }

@@ -50,7 +50,7 @@ final class LoginViewController: UIViewController {
 
         guard let passwordText = passwordTextField.text else { return }
 
-        if loginText == "admin", passwordText == "123456" {
+        if loginText == "", passwordText == "" {
             print("Успешная организация")
         } else {
             showAler(title: "Неверный логин или пароль", messsage: "Проверьте данные")

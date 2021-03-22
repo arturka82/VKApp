@@ -13,14 +13,20 @@ final class FeedViewController: UIViewController {
     @IBOutlet weak var pickerControll: VerticalControl!
     @IBOutlet weak var table: UITableView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     // MARK: - Public Properties
     var qunemGandon: Users? = nil
     
+    
     // MARK: - Private Properties
     private var modelUsers = [Users]()
-
+    var poiskFriend: [String] = []
+    var filterFriend: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadArray()
         
         table.delegate = self
         table.dataSource = self
@@ -49,6 +55,13 @@ final class FeedViewController: UIViewController {
             table.scrollToRow(at: indexPath, at: .top, animated: true)
         }
     }
+    
+    func loadArray() {
+        for k in modelUsers {
+            let newName = k.name
+            poiskFriend.append(newName)
+        }
+    }
 }
 
 // MARK: - FeedViewController
@@ -61,7 +74,7 @@ extension FeedViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FriendsListTableViewCell.id, for: indexPath) as? FriendsListTableViewCell else { return UITableViewCell() }
         cell.configure(model: modelUsers[indexPath.row])
         cell.selectionStyle = .none
-
+        
         return cell
     }
 }
@@ -76,5 +89,22 @@ extension FeedViewController: UITableViewDelegate {
         qunemGandon = modelUsers[indexPath.row]
         performSegue(withIdentifier: "collectionSegue", sender: qunemGandon)
     }
+    
+}
 
+extension FeedViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText == "" {
+            filterFriend = poiskFriend
+        } else {
+            for value in poiskFriend {
+                if value.lowercased().contains(searchText.lowercased()) {
+                    filterFriend.append(value)
+                }
+            }
+        }
+        table.reloadData()
+
+    }
 }

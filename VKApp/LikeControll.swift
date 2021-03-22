@@ -7,27 +7,17 @@
 
 import UIKit
 
+/// LikesControl
 @IBDesignable final class LikesControl: UIControl {
     
-    var flag = true
-    
+    // MARK: - Private Properties
+    private var flag = true
     private var stackView = UIStackView()
     private var likeImageView = UIImageView()
     private var likesCount = 5
     private var likeCountLablel = UILabel()
-    
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupView()
-        stackView.frame = bounds
-    }
-    
-    
-    func setLikes(likesCount: Int) {
-        self.likesCount = likesCount
-    }
-    
+
+    // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -38,7 +28,24 @@ import UIKit
         setupView()
     }
     
-    func setupView() {
+    // MARK: - Public methods
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupView()
+        stackView.frame = bounds
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        likeSelect()
+        likeCountLablel.text = String(likesCount)
+    }
+    
+    // MARK: - Private Methods
+    private func setLikes(likesCount: Int) {
+        self.likesCount = likesCount
+    }
+    
+    private func setupView() {
         likeImageView.image = UIImage(systemName: "heart")
         likeImageView.tintColor = .gray
         likeImageView.contentMode = .scaleAspectFill
@@ -54,7 +61,8 @@ import UIKit
         addSubview(stackView)
     }
     
-    func likeSelect() {
+    // MARK: - Private Methods
+    private func likeSelect() {
         if flag {
             likeImageView.image = UIImage(systemName: "heart.fill")
             likeImageView.tintColor = .red
@@ -69,10 +77,5 @@ import UIKit
         flag.toggle()
         print(likesCount)
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        likeSelect()
-        likeCountLablel.text = String(likesCount)
 
-    }
 }

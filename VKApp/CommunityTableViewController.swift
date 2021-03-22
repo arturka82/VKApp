@@ -8,11 +8,11 @@
 import UIKit
 
 final class CommunityTableViewController: UITableViewController {
-    
+    // MARK: - IBOutlet
     @IBOutlet var table: UITableView!
     
+    // MARK: - Private Properties
     private var modelCommunity = [Community]()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ final class CommunityTableViewController: UITableViewController {
          navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    // MARK: - IBAction
     @IBAction func addCommunity(segue: UIStoryboardSegue) {
         if segue.identifier == "addCom" {
             guard let allCom = segue.source as? NewCommunityTableViewController else { return }

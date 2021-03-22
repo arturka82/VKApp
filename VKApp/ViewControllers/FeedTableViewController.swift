@@ -9,12 +9,15 @@ import UIKit
 
 /// FeedTableViewController
 final class FeedTableViewController: UITableViewController {
+    
+    // MARK: - IBOutlet
     @IBOutlet var table: UITableView!
     
+    // MARK: - Public Properties
     var qunemGandon: Users? = nil
     
-    let control = VerticalControl()
-    
+    // MARK: - Private Properties
+    private let control = VerticalControl()
     private var modelUsers = [Users]()
 
     override func viewDidLoad() {
@@ -29,6 +32,7 @@ final class FeedTableViewController: UITableViewController {
         modelUsers.append(Users(name: "Бестия", userImage: "head5"))
     }
     
+    // MARK: - Public methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let target = segue.destination as? DetailCollectionViewController {
             target.qunemGandon = qunemGandon
@@ -38,7 +42,6 @@ final class FeedTableViewController: UITableViewController {
 
 // MARK: - Table view data source
 extension FeedTableViewController {
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -65,5 +68,4 @@ extension FeedTableViewController {
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         ["Е", "М", "В", "Б", "Е", "М", "В", "Б"]
     }
-    
 }

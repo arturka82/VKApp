@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		912F52CA26035E8D0043397E /* AllCommunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F52C926035E8D0043397E /* AllCommunityTableViewCell.swift */; };
 		912F52CD2603B8180043397E /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F52CC2603B8180043397E /* CustomImage.swift */; };
-		9150D301260482C900247944 /* NewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9150D300260482C900247944 /* NewControl.swift */; };
 		915E28D22600786B00E53974 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E28D12600786B00E53974 /* LoginViewController.swift */; };
 		916053BA2603E23800A98272 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916053B82603E23800A98272 /* PostTableViewCell.swift */; };
 		916053BB2603E23800A98272 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 916053B92603E23800A98272 /* PostTableViewCell.xib */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		912F52C926035E8D0043397E /* AllCommunityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommunityTableViewCell.swift; sourceTree = "<group>"; };
 		912F52CC2603B8180043397E /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
-		9150D300260482C900247944 /* NewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewControl.swift; sourceTree = SOURCE_ROOT; };
 		915E28D12600786B00E53974 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		916053B82603E23800A98272 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		916053B92603E23800A98272 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
@@ -111,12 +109,14 @@
 		91719C842603154A00D87B2F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				91719C722601266B00D87B2F /* TabBarViewController.swift */,
 				916053D32604638E00A98272 /* FeedViewController.swift */,
 				91719C8E2603160500D87B2F /* FeedTableViewController.swift */,
 				916053C62603F18000A98272 /* HomeTableViewController.swift */,
 				91719CA22603351C00D87B2F /* NewCommunityTableViewController.swift */,
 				91719C9926032FC700D87B2F /* CommunityTableViewController.swift */,
 				915E28D12600786B00E53974 /* LoginViewController.swift */,
+				9172C299260091D70050C33D /* SecondViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -140,10 +140,7 @@
 		91B9DC9925FF784A00E49F0E /* VKApp */ = {
 			isa = PBXGroup;
 			children = (
-				9150D300260482C900247944 /* NewControl.swift */,
-				91B9DC9A25FF784A00E49F0E /* AppDelegate.swift */,
 				91719C842603154A00D87B2F /* ViewControllers */,
-				91719C7E2602931700D87B2F /* Model.swift */,
 				916053C12603E70C00A98272 /* TableViewCell */,
 				91B9DC9C25FF784A00E49F0E /* SceneDelegate.swift */,
 				91B9DCA025FF784A00E49F0E /* Main.storyboard */,
@@ -151,9 +148,9 @@
 				916053D72604794000A98272 /* VerticalControl.swift */,
 				912F52CC2603B8180043397E /* CustomImage.swift */,
 				916053BD2603E6E100A98272 /* LikeControll.swift */,
-				91719C722601266B00D87B2F /* TabBarViewController.swift */,
-				9172C299260091D70050C33D /* SecondViewController.swift */,
+				91B9DC9A25FF784A00E49F0E /* AppDelegate.swift */,
 				91B9DCA325FF784C00E49F0E /* Assets.xcassets */,
+				91719C7E2602931700D87B2F /* Model.swift */,
 				91B9DCA525FF784C00E49F0E /* LaunchScreen.storyboard */,
 				91B9DCA825FF784C00E49F0E /* Info.plist */,
 			);
@@ -252,7 +249,6 @@
 				916053BE2603E6E100A98272 /* LikeControll.swift in Sources */,
 				916053CF260409DB00A98272 /* HorizontalControl.swift in Sources */,
 				912F52CD2603B8180043397E /* CustomImage.swift in Sources */,
-				9150D301260482C900247944 /* NewControl.swift in Sources */,
 				91B9DC9D25FF784A00E49F0E /* SceneDelegate.swift in Sources */,
 				91719C94260319BB00D87B2F /* PodrobnoCollectionViewCell.swift in Sources */,
 				91719C7F2602931700D87B2F /* Model.swift in Sources */,

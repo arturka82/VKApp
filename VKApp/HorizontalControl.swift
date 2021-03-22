@@ -8,8 +8,9 @@
 import UIKit
 
 /// HorizontalControl
- class HorizontalControl: UIControl {
+final class HorizontalControl: UIControl {
     
+    // MARK: - Private Properties
     private var firstButton = UIButton()
     private var secondButton = UIButton()
     private var thirdButton = UIButton()
@@ -19,10 +20,7 @@ import UIKit
     private var buttons: [UIButton] = []
     private var stackView =  UIStackView()
     
-    override func draw(_ rect: CGRect) {
-
-    }
-    
+    // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -33,11 +31,12 @@ import UIKit
         setupView()
     }
     
+    // MARK: - Public methods
     override func layoutSubviews() {
         super.layoutSubviews()
         stackView.frame = bounds
     }
-
+    
     func setupView() {
         firstButton.setTitle("Е", for: .normal)
         firstButton.setTitleColor(.blue, for: .normal)
@@ -67,8 +66,8 @@ import UIKit
         stackView.alignment = .center
         stackView.distribution = .fillEqually
     }
-    
 
+    // MARK: - Private Methods
     @objc private func test() {
         print("kk")
     }

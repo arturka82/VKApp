@@ -9,9 +9,10 @@ import UIKit
 
 /// NewCommunityTableViewController
 final class NewCommunityTableViewController: UITableViewController {
-
+    // MARK: - IBOutlet
     @IBOutlet var table: UITableView!
     
+    // MARK: - Public Properties
     var modelCommunity = [Community]()
 
     override func viewDidLoad() {

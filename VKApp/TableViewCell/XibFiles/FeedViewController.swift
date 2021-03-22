@@ -7,16 +7,18 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
-
-    private var modelUsers = [Users]()
-    
+/// FeedViewController
+final class FeedViewController: UIViewController {
+    // MARK: - IBOutlet
     @IBOutlet weak var pickerControll: VerticalControl!
-    var qunemGandon: Users? = nil
-
-    
     @IBOutlet weak var table: UITableView!
     
+    // MARK: - Public Properties
+    var qunemGandon: Users? = nil
+    
+    // MARK: - Private Properties
+    private var modelUsers = [Users]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +34,8 @@ class FeedViewController: UIViewController {
         modelUsers.append(Users(name: "Бестия", userImage: "head5"))
         
     }
+    
+    // MARK: - Public methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let target = segue.destination as? DetailCollectionViewController {
             target.qunemGandon = qunemGandon
@@ -47,7 +51,7 @@ class FeedViewController: UIViewController {
     }
 }
 
-
+// MARK: - FeedViewController
 extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         modelUsers.count
@@ -62,6 +66,7 @@ extension FeedViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100

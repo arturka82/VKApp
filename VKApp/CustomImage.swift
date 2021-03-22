@@ -7,8 +7,10 @@
 
 import UIKit
 
-class CustomImage: UIImageView {
+/// CustomImage
+final class CustomImage: UIImageView {
    
+    // MARK: - IBInspectable
     @IBInspectable var shadowOpacity: CGFloat = 1 {
         didSet {
             updateShadowOpacity()
@@ -30,12 +32,7 @@ class CustomImage: UIImageView {
         }
     }
     
-    
-    
-    override func draw(_ rect: CGRect) {
-        
-    }
-    
+    // MARK: - Private Methods
     private func updateShadowOpacity() {
         layer.shadowOpacity = Float(shadowOpacity)
         layer.shadowRadius = shadowRadius

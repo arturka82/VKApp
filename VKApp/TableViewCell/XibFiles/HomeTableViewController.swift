@@ -7,10 +7,13 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
-
-    @IBOutlet var table: UITableView!
+/// HomeTableViewController
+final class HomeTableViewController: UITableViewController {
     
+    // MARK: - IBOutlet
+    @IBOutlet var table: UITableView!
+
+    // MARK: - Private Properties
     private var modelPost = [Post]()
     
     override func viewDidLoad() {
@@ -26,11 +29,9 @@ class HomeTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         modelPost.count
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.id, for: indexPath) as? PostTableViewCell else {

@@ -18,12 +18,7 @@ final class VerticalControl: UIControl {
     private var fiveButton = UIButton()
     private var stackView =  UIStackView()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupView()
-        stackView.frame = bounds
-    }
-    
+    // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -34,6 +29,12 @@ final class VerticalControl: UIControl {
         setupView()
     }
     
+    // MARK: - Public methods
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupView()
+        stackView.frame = bounds
+    }
     
     func setupView() {
         firstButton.setTitle("Е", for: .normal)
@@ -56,7 +57,6 @@ final class VerticalControl: UIControl {
         fourButton.setTitleColor(.red, for: .highlighted)
         fourButton.addTarget(nil, action: #selector(test), for: .touchUpInside)
         
-        
         stackView = UIStackView(arrangedSubviews: [firstButton, secondButton, thirdButton, fourButton])
         stackView.spacing = 30
         stackView.axis = .vertical
@@ -65,7 +65,6 @@ final class VerticalControl: UIControl {
         
         addSubview(stackView)
     }
-    
     
     @objc private func test() {
         print("kk")

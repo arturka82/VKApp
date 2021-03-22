@@ -10,21 +10,22 @@ import UIKit
 /// LoginViewController
 final class LoginViewController: UIViewController {
     
+    // MARK: - IBOutlet
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
         let hideKeybordGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
 
         scrollView.addGestureRecognizer(hideKeybordGesture)
         navigationController?.navigationBar.isHidden = true
         
     }
-
+    
+    // MARK: - Public methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -43,12 +44,13 @@ final class LoginViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
+    // MARK: - IBAction
     @IBAction private func loginActionButton() {
         guard let loginText = loginTextField.text else { return }
 
         guard let passwordText = passwordTextField.text else { return }
 
-        if loginText == "", passwordText == "" {
+        if loginText == "admin", passwordText == "123456" {
             print("Успешная организация")
         } else {
             showAler(title: "Неверный логин или пароль", messsage: "Проверьте данные")
@@ -56,6 +58,7 @@ final class LoginViewController: UIViewController {
         }
     }
 
+    // MARK: - Private Methods
     @objc private func ​keyboardWasShown​(notification: Notification) {
         guard let userInfo = notification.userInfo,
               let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
@@ -77,6 +80,7 @@ final class LoginViewController: UIViewController {
     }
 }
 
+// MARK: - Extension
 private extension LoginViewController {
     func showAler(title: String, messsage: String) {
         let alertController = UIAlertController(title: title, message: messsage, preferredStyle: .alert)

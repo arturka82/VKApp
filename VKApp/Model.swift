@@ -24,3 +24,8 @@ struct Post {
     var likeCount: String
     var postName: String
 }
+
+struct Section {
+    let letter : String
+    let names : [String]
+}

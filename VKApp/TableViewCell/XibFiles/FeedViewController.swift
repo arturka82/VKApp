@@ -12,7 +12,6 @@ final class FeedViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var pickerControll: VerticalControl!
     @IBOutlet weak var table: UITableView!
-    
     @IBOutlet weak var searchBar: UISearchBar!
     // MARK: - Public Properties
     var qunemGandon: Users? = nil
@@ -20,13 +19,16 @@ final class FeedViewController: UIViewController {
     
     // MARK: - Private Properties
     private var modelUsers = [Users]()
-    var poiskFriend: [String] = []
-    var filterFriend: [String] = []
+    private var usernames: [String] = []
+    private var userImage: [String] = []
+    private var sections = [Section]()
+
+
+    private var dupmodelPost = [Users]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadArray()
+        searchBar.delegate = self
         
         table.delegate = self
         table.dataSource = self
@@ -39,6 +41,13 @@ final class FeedViewController: UIViewController {
         modelUsers.append(Users(name: "Ваз 2105", userImage: "head4"))
         modelUsers.append(Users(name: "Бестия", userImage: "head5"))
         
+        dupmodelPost = modelUsers
+        
+        loadArray()
+        table.reloadData()
+        
+        let theTap = UITapGestureRecognizer(target: self, action: #selector(tableTap))
+        table.addGestureRecognizer(theTap)
     }
     
     // MARK: - Public methods
@@ -56,29 +65,50 @@ final class FeedViewController: UIViewController {
         }
     }
     
-    func loadArray() {
-        for k in modelUsers {
-            let newName = k.name
-            poiskFriend.append(newName)
+    private func loadArray() {
+        for value in modelUsers {
+            usernames.append(value.name)
         }
+        for value in modelUsers {
+            userImage.append(value.userImage)
+        }
+        let groupedDictionary = Dictionary(grouping: usernames, by: {String($0.prefix(1))})
+        let keys = groupedDictionary.keys.sorted()
+        sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
+        
+    }
+    
+    @objc private func tableTap(recognizer: UIGestureRecognizer) {
+        table.endEditing(true)
     }
 }
 
 // MARK: - FeedViewController
 extension FeedViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        sections.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        modelUsers.count
+        sections[section].names.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FriendsListTableViewCell.id, for: indexPath) as? FriendsListTableViewCell else { return UITableViewCell() }
-        cell.configure(model: modelUsers[indexPath.row])
-        cell.selectionStyle = .none
+            let section = sections[indexPath.section]
+            let username = section.names[indexPath.row]
+            cell.userNameLabel.text = username
+            cell.userImageView?.image = UIImage(named: username)
         
-        return cell
+//            cell.selectionStyle = .none
+        
+            return cell
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        sections[section].letter
     }
 }
-
 // MARK: - UITableViewDelegate
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,22 +119,24 @@ extension FeedViewController: UITableViewDelegate {
         qunemGandon = modelUsers[indexPath.row]
         performSegue(withIdentifier: "collectionSegue", sender: qunemGandon)
     }
-    
 }
 
 extension FeedViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.endEditing(true)
         
-        if searchText == "" {
-            filterFriend = poiskFriend
-        } else {
-            for value in poiskFriend {
-                if value.lowercased().contains(searchText.lowercased()) {
-                    filterFriend.append(value)
-                }
-            }
-        }
+        dupmodelPost = modelUsers
         table.reloadData()
-
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        dupmodelPost = searchText.isEmpty ? modelUsers : modelUsers.filter({ (model) -> Bool in
+            return model.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        })
+        table.reloadData()
     }
 }

@@ -35,7 +35,6 @@ class FriendsListTableViewCell: UITableViewCell {
     }
     
     public func configure(model: Users) {
-
         userNameLabel.text = model.name
         userImageView.image = UIImage(named: model.userImage)
     }

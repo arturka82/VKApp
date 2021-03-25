@@ -23,7 +23,7 @@ class DetailCollectionViewController: UICollectionViewController {
         collectionView.dataSource = self
         
     
-        collectionView.register(PodrobnoCollectionViewCell.nib(), forCellWithReuseIdentifier: PodrobnoCollectionViewCell.id)
+//        collectionView.register(PodrobnoCollectionViewCell.nib(), forCellWithReuseIdentifier: PodrobnoCollectionViewCell.id)
 
         // Do any additional setup after loading the view.
     }
@@ -35,11 +35,11 @@ class DetailCollectionViewController: UICollectionViewController {
         qunemModel.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PodrobnoCollectionViewCell.id, for: indexPath) as? PodrobnoCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.configure(model: qunemModel[indexPath.row])
-        return cell
-    }
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PodrobnoCollectionViewCell.id, for: indexPath) as? PodrobnoCollectionViewCell else { return UICollectionViewCell() }
+//        
+//        cell.configure(model: qunemModel[indexPath.row])
+//        return cell
+//    }
 
 }

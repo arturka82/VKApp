@@ -30,6 +30,7 @@ final class FeedTableViewController: UITableViewController {
         modelUsers.append(Users(name: "Моя девушка", userImage: "head3"))
         modelUsers.append(Users(name: "Ваз 2105", userImage: "head4"))
         modelUsers.append(Users(name: "Бестия", userImage: "head5"))
+    
     }
     
     // MARK: - Public methods
@@ -38,6 +39,8 @@ final class FeedTableViewController: UITableViewController {
             target.qunemGandon = qunemGandon
         }
     }
+    
+    
 }
 
 // MARK: - Table view data source
@@ -66,6 +69,6 @@ extension FeedTableViewController {
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        ["Е", "М", "В", "Б", "Е", "М", "В", "Б"]
+        ["Б", "В", "Е", "М"]
     }
 }

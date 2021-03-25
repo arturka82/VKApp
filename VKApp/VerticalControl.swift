@@ -37,22 +37,22 @@ final class VerticalControl: UIControl {
     }
     
     func setupView() {
-        firstButton.setTitle("Е", for: .normal)
+        firstButton.setTitle("Б", for: .normal)
         firstButton.setTitleColor(.black, for: .normal)
         firstButton.setTitleColor(.red, for: .highlighted)
         firstButton.addTarget(nil, action: #selector(test), for: .touchUpInside)
         
-        secondButton.setTitle("М", for: .normal)
+        secondButton.setTitle("В", for: .normal)
         secondButton.setTitleColor(.black, for: .normal)
         secondButton.setTitleColor(.red, for: .highlighted)
         secondButton.addTarget(nil, action: #selector(test), for: .touchUpInside)
         
-        thirdButton.setTitle("В", for: .normal)
+        thirdButton.setTitle("Е", for: .normal)
         thirdButton.setTitleColor(.black, for: .normal)
         thirdButton.setTitleColor(.red, for: .highlighted)
         secondButton.addTarget(nil, action: #selector(test), for: .touchUpInside)
         
-        fourButton.setTitle("Б", for: .normal)
+        fourButton.setTitle("М", for: .normal)
         fourButton.setTitleColor(.black, for: .normal)
         fourButton.setTitleColor(.red, for: .highlighted)
         fourButton.addTarget(nil, action: #selector(test), for: .touchUpInside)

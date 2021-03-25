@@ -21,8 +21,8 @@ final class HomeTableViewController: UITableViewController {
         
         table.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.id)
         
-        modelPost.append(Post(smallImageUser: "head4", nameImageView: "head5", likeCount: "555", postName: "Nice day"))
-        modelPost.append(Post(smallImageUser: "head1", nameImageView: "pub7", likeCount: "555", postName: "Артур, рельно могет"))
+        modelPost.append(Post(smallImageUser: "Бестия", nameImageView: "Моя жена", likeCount: "555", postName: "Nice day"))
+        modelPost.append(Post(smallImageUser: "Евгений", nameImageView: "pub7", likeCount: "555", postName: "Артур, рельно могет"))
         modelPost.append(Post(smallImageUser: "head4", nameImageView: "head5", likeCount: "555", postName: "Qunem gandon vord"))
         modelPost.append(Post(smallImageUser: "head4", nameImageView: "head5", likeCount: "555", postName: "Qunem gandon vord"))
         modelPost.append(Post(smallImageUser: "head4", nameImageView: "head5", likeCount: "555", postName: "Qunem gandon vord"))
@@ -43,8 +43,8 @@ final class HomeTableViewController: UITableViewController {
         
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        420
+        620
     }
 }

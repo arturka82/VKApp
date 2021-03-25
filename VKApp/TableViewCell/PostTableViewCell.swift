@@ -31,6 +31,14 @@ class PostTableViewCell: UITableViewCell {
         UINib(nibName: "PostTableViewCell", bundle: nil)
     }
     
+    func bolshe() {
+        UIView.animate(withDuration: 10) {
+                   self.mainImageView.frame.size = CGSize(width: 195, height: 195)
+                   self.mainImageView.frame.size.width += 100
+                   self.mainImageView.frame.size.height -= 100
+                   self.mainImageView.center.y += 200
+               }
+    }
     
     func configure(model: Post) {
         postNameLabel.text = model.postName

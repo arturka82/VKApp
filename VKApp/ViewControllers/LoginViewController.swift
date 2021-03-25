@@ -12,7 +12,9 @@ final class LoginViewController: UIViewController {
     
     // MARK: - IBOutlet
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet var loginTextField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet var passwordTextField: UITextField!
 
     override func viewDidLoad() {
@@ -28,6 +30,7 @@ final class LoginViewController: UIViewController {
     // MARK: - Public methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        animateTitle()
 
         NotificationCenter.default.addObserver(self, selector: #selector(​keyboardWasShown​),
                                                name: UIResponder.keyboardWillShowNotification,
@@ -77,6 +80,23 @@ final class LoginViewController: UIViewController {
 
     @objc private func hideKeyboard() {
         scrollView.endEditing(true)
+    }
+    
+    private func animateTitle() {
+        let offset = view.bounds.width
+        loginLabel.transform = CGAffineTransform(translationX: -offset, y: 0)
+        passwordLabel.transform = CGAffineTransform(translationX: offset, y: 0)
+
+        UIView.animate(withDuration: 2, delay: 0.5, options: .curveEaseOut) {
+            self.loginLabel.transform = .identity
+            self.passwordLabel.transform = .identity
+
+        }
+        
+        UIView.animate(withDuration: 1, delay: 0.5, options: .curveEaseOut) {
+            self.loginTextField.alpha = 1
+            self.passwordTextField.alpha = 1
+        }
     }
 }
 

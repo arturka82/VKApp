@@ -30,6 +30,11 @@
 		91719CA026032FEB00D87B2F /* CommunityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91719C9E26032FEB00D87B2F /* CommunityTableViewCell.xib */; };
 		91719CA32603351C00D87B2F /* NewCommunityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91719CA22603351C00D87B2F /* NewCommunityTableViewController.swift */; };
 		9172C29A260091D70050C33D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172C299260091D70050C33D /* SecondViewController.swift */; };
+		9199552D260A56E4007A304F /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199552C260A56E4007A304F /* AnimationViewController.swift */; };
+		91995531260C4449007A304F /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91995530260C4449007A304F /* PhotosCollectionViewController.swift */; };
+		91995534260C455E007A304F /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91995533260C455E007A304F /* PhotosCollectionViewCell.swift */; };
+		9199555F260C4BCE007A304F /* QunemPCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199555D260C4BCE007A304F /* QunemPCollectionViewCell.swift */; };
+		91995560260C4BCE007A304F /* QunemPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9199555E260C4BCE007A304F /* QunemPCollectionViewCell.xib */; };
 		91B9DC9B25FF784A00E49F0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9DC9A25FF784A00E49F0E /* AppDelegate.swift */; };
 		91B9DC9D25FF784A00E49F0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9DC9C25FF784A00E49F0E /* SceneDelegate.swift */; };
 		91B9DCA225FF784A00E49F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B9DCA025FF784A00E49F0E /* Main.storyboard */; };
@@ -61,6 +66,11 @@
 		91719C9E26032FEB00D87B2F /* CommunityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityTableViewCell.xib; sourceTree = "<group>"; };
 		91719CA22603351C00D87B2F /* NewCommunityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewCommunityTableViewController.swift; path = VKApp/NewCommunityTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		9172C299260091D70050C33D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		9199552C260A56E4007A304F /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		91995530260C4449007A304F /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		91995533260C455E007A304F /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		9199555D260C4BCE007A304F /* QunemPCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QunemPCollectionViewCell.swift; sourceTree = "<group>"; };
+		9199555E260C4BCE007A304F /* QunemPCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QunemPCollectionViewCell.xib; sourceTree = "<group>"; };
 		91B9DC9725FF784A00E49F0E /* VKApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B9DC9A25FF784A00E49F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91B9DC9C25FF784A00E49F0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,7 +154,12 @@
 				916053C12603E70C00A98272 /* TableViewCell */,
 				91B9DC9C25FF784A00E49F0E /* SceneDelegate.swift */,
 				91B9DCA025FF784A00E49F0E /* Main.storyboard */,
+				9199555D260C4BCE007A304F /* QunemPCollectionViewCell.swift */,
+				9199555E260C4BCE007A304F /* QunemPCollectionViewCell.xib */,
+				91995533260C455E007A304F /* PhotosCollectionViewCell.swift */,
+				91995530260C4449007A304F /* PhotosCollectionViewController.swift */,
 				916053CE260409DB00A98272 /* HorizontalControl.swift */,
+				9199552C260A56E4007A304F /* AnimationViewController.swift */,
 				916053D72604794000A98272 /* VerticalControl.swift */,
 				912F52CC2603B8180043397E /* CustomImage.swift */,
 				916053BD2603E6E100A98272 /* LikeControll.swift */,
@@ -216,6 +231,7 @@
 			files = (
 				91B9DCA725FF784C00E49F0E /* LaunchScreen.storyboard in Resources */,
 				91719C95260319BB00D87B2F /* PodrobnoCollectionViewCell.xib in Resources */,
+				91995560260C4BCE007A304F /* QunemPCollectionViewCell.xib in Resources */,
 				91B9DCA425FF784C00E49F0E /* Assets.xcassets in Resources */,
 				91719CA026032FEB00D87B2F /* CommunityTableViewCell.xib in Resources */,
 				916053BB2603E23800A98272 /* PostTableViewCell.xib in Resources */,
@@ -236,6 +252,7 @@
 				91719C8B260315E600D87B2F /* FriendsListTableViewCell.swift in Sources */,
 				916053D42604638E00A98272 /* FeedViewController.swift in Sources */,
 				91719CA32603351C00D87B2F /* NewCommunityTableViewController.swift in Sources */,
+				91995534260C455E007A304F /* PhotosCollectionViewCell.swift in Sources */,
 				912F52CA26035E8D0043397E /* AllCommunityTableViewCell.swift in Sources */,
 				915E28D22600786B00E53974 /* LoginViewController.swift in Sources */,
 				91719C9F26032FEB00D87B2F /* CommunityTableViewCell.swift in Sources */,
@@ -244,8 +261,11 @@
 				91719C732601266B00D87B2F /* TabBarViewController.swift in Sources */,
 				91719C82260314FA00D87B2F /* DetailCollectionViewController.swift in Sources */,
 				91719C9A26032FC700D87B2F /* CommunityTableViewController.swift in Sources */,
+				9199552D260A56E4007A304F /* AnimationViewController.swift in Sources */,
+				91995531260C4449007A304F /* PhotosCollectionViewController.swift in Sources */,
 				91719C8F2603160500D87B2F /* FeedTableViewController.swift in Sources */,
 				916053BA2603E23800A98272 /* PostTableViewCell.swift in Sources */,
+				9199555F260C4BCE007A304F /* QunemPCollectionViewCell.swift in Sources */,
 				916053BE2603E6E100A98272 /* LikeControll.swift in Sources */,
 				916053CF260409DB00A98272 /* HorizontalControl.swift in Sources */,
 				912F52CD2603B8180043397E /* CustomImage.swift in Sources */,

@@ -33,6 +33,7 @@ class PodrobnoCollectionViewCell: UICollectionViewCell {
             setNeedsDisplay()
         }
     }
+    @IBOutlet weak var showImage: UITapGestureRecognizer!
     
     private func updateShadowOpacity() {
         userDetailImageView.layer.shadowOpacity = Float(shadowOpacity)
@@ -47,16 +48,31 @@ class PodrobnoCollectionViewCell: UICollectionViewCell {
         applyshadowWithCorner(containerView: backView, cornerRadious: 75)
         updateShadowOpacity()
     }
-
+    
+    @IBAction func showImage(_ sender: Any) {
+        bolsheImage()
+    }
+    
     static func nib() -> UINib {
         let inibLocal = UINib(nibName: "PodrobnoCollectionViewCell", bundle: nil)
         
         return inibLocal
     }
-    
+
     public func configure(model: Users) {
         userNameLabel.text = model.name
         userDetailImageView.image = UIImage(named: model.userImage)
+    }
+    
+    func bolsheImage() {
+        var transform = CATransform3DIdentity
+                transform.m34 = -0.001
+        userDetailImageView.layer.transform = transform
+                UIView.animate(withDuration: 3) {
+                    self.userDetailImageView.layer.transform = CATransform3DRotate(transform, .pi, 0, 1, 0)
+
+                    self.userDetailImageView.layoutIfNeeded()
+                }
     }
 }
 

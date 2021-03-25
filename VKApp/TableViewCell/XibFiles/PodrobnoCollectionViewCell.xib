@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PodrobnoCollectionViewCell" id="gTV-IL-0wX" customClass="PodrobnoCollectionViewCell" customModule="VKApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PodrobnoCollectionViewCell" reuseIdentifier="PodrobnoCollectionViewCell" id="gTV-IL-0wX">
             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -30,6 +30,7 @@
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eBG-OJ-rgU" customClass="CustomImage" customModule="VKApp" customModuleProvider="target">
                         <rect key="frame" x="75" y="49" width="150" height="150"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" constant="150" id="Umd-0v-Lsm"/>
                             <constraint firstAttribute="height" constant="150" id="V3V-vv-E1G"/>
@@ -42,6 +43,9 @@
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="x3T-59-dgD" appends="YES" id="n93-Kw-SyV"/>
+                        </connections>
                     </imageView>
                 </subviews>
             </view>
@@ -72,6 +76,11 @@
             </connections>
             <point key="canvasLocation" x="278.26086956521743" y="126.5625"/>
         </collectionViewCell>
+        <tapGestureRecognizer id="x3T-59-dgD">
+            <connections>
+                <action selector="showImage:" destination="gTV-IL-0wX" id="V4e-oF-Kw9"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
